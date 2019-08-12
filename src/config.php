@@ -2,5 +2,5 @@
 
 $host = 'localhost';
 $dbName = 'burgers';
-$userName = 'root';
-$password = "";
+$userName = 'test';
+$password = "test";
