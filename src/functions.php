@@ -130,9 +130,11 @@ function sendMail($orderInfo, $data)
 
 function sendMailSwift(string $recipientEmail)
 {
-    $transport = (new Swift_SmtpTransport('smtp.mail.ru', 465, 'ssl'))
-        ->setUsername('')
-        ->setPassword('')
+    $mailConfig = require __DIR__ . '/mail_config.php';
+
+    $transport = (new Swift_SmtpTransport($mailConfig["smtp"], $mailConfig["port"], $mailConfig['encryption']))
+        ->setUsername($mailConfig["userName"])
+        ->setPassword($mailConfig["password"])
     ;
     $message = (new Swift_Message('Wonderful Subject'))
         ->setFrom(['admin99@burgers.ru'])

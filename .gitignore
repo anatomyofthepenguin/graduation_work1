@@ -1,2 +1,3 @@
 .idea/
 vendor/
+/src/mail_config.php
